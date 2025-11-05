@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"login\": \"admin65ee@gmail.com\",\n    \"password\": \"admin\"\n}",
+							"raw": "{\n    \"login\": \"sergey@gmail.com\",\n    \"password\": \"Rich2005!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -164,11 +164,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": [
-										"/Users/sergey/Downloads/еще больше задач - еще больше задач.pdf",
-										"/Users/sergey/Downloads/еще_больше_задач_еще_больше_задач.pdf",
-										"/Users/sergey/Downloads/Инструкция по подаче заявления на ЕЦП Работа России.pdf"
-									]
+									"src": []
 								}
 							]
 						},
@@ -343,7 +339,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/sergey/Downloads/6902102dd7af42b99a77c990.jpeg"
+									"src": []
 								}
 							]
 						},
