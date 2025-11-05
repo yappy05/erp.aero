@@ -215,7 +215,7 @@ export class AuthService {
       httpOnly: true,
       domain: this.COOKIES_DOMAIN,
       expires,
-      secure: !isDev(this.configService),
+      secure: false,
       sameSite: 'lax',
     });
   }

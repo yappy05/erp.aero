@@ -10,13 +10,13 @@
 			"name": "auth",
 			"item": [
 				{
-					"name": "register",
+					"name": "register | signup",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"login\": \"admin6@gmail.com\",\n    \"password\": \"admin\"\n}",
+							"raw": "{\n    \"login\": \"admin65ee@gmail.com\",\n    \"password\": \"admin\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -37,7 +37,7 @@
 					"response": []
 				},
 				{
-					"name": "login",
+					"name": "login | signin",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -164,17 +164,21 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": []
+									"src": [
+										"/Users/sergey/Downloads/еще больше задач - еще больше задач.pdf",
+										"/Users/sergey/Downloads/еще_больше_задач_еще_больше_задач.pdf",
+										"/Users/sergey/Downloads/Инструкция по подаче заявления на ЕЦП Работа России.pdf"
+									]
 								}
 							]
 						},
 						"url": {
-							"raw": "{{API_URL}}/files/upload",
+							"raw": "{{API_URL}}/file/upload",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
-								"files",
+								"file",
 								"upload"
 							]
 						}
@@ -197,12 +201,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_URL}}/files/list?page=1&list_size=3",
+							"raw": "{{API_URL}}/file/list?page=1&list_size=3",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
-								"files",
+								"file",
 								"list"
 							],
 							"query": [
@@ -235,12 +239,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{API_URL}}/files/delete/cmhm3o7al00012pqyrvl0376m",
+							"raw": "{{API_URL}}/file/delete/cmhm3o7al00012pqyrvl0376m",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
-								"files",
+								"file",
 								"delete",
 								"cmhm3o7al00012pqyrvl0376m"
 							]
@@ -277,12 +281,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{API_URL}}/files/cmhm3q55d00002p842be039cs",
+							"raw": "{{API_URL}}/file/cmhm3q55d00002p842be039cs",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
-								"files",
+								"file",
 								"cmhm3q55d00002p842be039cs"
 							]
 						}
@@ -305,12 +309,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_URL}}/files/download/cmhm3q55d00002p842be039cs",
+							"raw": "{{API_URL}}/file/download/cmhm3q55d00002p842be039cs",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
-								"files",
+								"file",
 								"download",
 								"cmhm3q55d00002p842be039cs"
 							]
@@ -344,12 +348,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{API_URL}}/files/update/cmhm3q55d00002p842be039cs",
+							"raw": "{{API_URL}}/file/update/cmhm3q55d00002p842be039cs",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
-								"files",
+								"file",
 								"update",
 								"cmhm3q55d00002p842be039cs"
 							]
