@@ -20,7 +20,7 @@ import { Request, Response } from 'express';
 import { FilesInterceptor, FileInterceptor } from '@nestjs/platform-express';
 
 @Protected()
-@Controller('files')
+@Controller('file')
 export class FilesController {
   constructor(private readonly filesService: FilesService) {}
 
