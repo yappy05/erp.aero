@@ -17,6 +17,8 @@ services:
     build: .
     env_file:
       - .env
+    environment:
+      DATABASE_URL: "mysql://${MYSQL_USER:-app}:${MYSQL_PASSWORD:-app}@db:3306/${MYSQL_DB:-app}"
     ports:
       - "${HTTP_PORT:-4000}:${HTTP_PORT:-4000}"
     depends_on:
