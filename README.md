@@ -2,18 +2,15 @@
 
 В проекте есть готовый `.env`.
 
-## Локальный запуск (без Docker)
+## Локальный запуск
 ```bash
 npm install
+docker compose up -d db
+npm run prisma:push
 npm run start:dev
 ```
 
-При локальном запуске базу данных нужно запускать отдельно:
-```bash
-docker compose up -d db
-```
-
-## Команды
+## Запуск из Docker
 ```bash
 # Запустить весь проект (app + db)
 docker compose up -d --build

@@ -7,6 +7,6 @@ RUN npx prisma generate
 COPY . .
 RUN npm run build
 EXPOSE 4000
-CMD node dist/main.js
+CMD sh -c "npx prisma db push && node dist/main.js"
 
 
