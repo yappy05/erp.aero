@@ -43,7 +43,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"login\": \"emai23l@com\",\n    \"password\": \"admin\"\n}",
+							"raw": "{\n    \"login\": \"sergey@gmail.com\",\n    \"password\": \"Rich2005!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
