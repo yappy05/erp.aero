@@ -1,6 +1,7 @@
 import {
   ConflictException,
   Injectable,
+  Logger,
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
@@ -23,6 +24,7 @@ export class AuthService {
   private readonly JWT_ACCESS_TOKEN_TTL: StringValue;
   private readonly JWT_REFRESH_TOKEN_TTL: StringValue;
   private readonly COOKIES_DOMAIN: string;
+  private readonly logger: Logger;
 
   constructor(
     private readonly prismaService: PrismaService,
@@ -37,6 +39,7 @@ export class AuthService {
     );
     this.COOKIES_DOMAIN =
       this.configService.getOrThrow<string>('COOKIES_DOMAIN');
+    this.logger = new Logger(AuthService.name);
   }
 
   public async register(res: Response, dto: RegisterDto, req: Request) {
@@ -49,6 +52,7 @@ export class AuthService {
     const isExists = await this.prismaService.user.findUnique({
       where: { login },
     });
+    this.logger.log(isExists)
     if (isExists)
       throw new ConflictException(
         'Пользователь с таким логином уже существует',

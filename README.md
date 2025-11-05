@@ -25,6 +25,8 @@ docker compose logs -f app
 docker compose down
 ```
 
+Приложение доступно по адресу: `http://localhost:4000` (порт указан в переменной `HTTP_PORT` из `.env`).
+
 ## Postman
 - Коллекция: `erp.aero.postman_collection.json`
 - Окружение: `dev`
