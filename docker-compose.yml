@@ -4,7 +4,7 @@ services:
   db:
     image: mysql:8
     environment:
-      MYSQL_DATABASE: ${MYSQL_DATABASE:-erp}
+      MYSQL_DATABASE: ${MYSQL_DB:-erp}
       MYSQL_USER: ${MYSQL_USER:-erp}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-erp}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
