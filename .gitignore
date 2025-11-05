@@ -36,7 +36,6 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 # dotenv environment variable files
-.env
 .env.development.local
 .env.test.local
 .env.production.local
@@ -56,3 +55,9 @@ pids
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 /generated/prisma
+
+/WHISPER_COLAB_INSTRUCTIONS.md
+/WHISPER_QUICK_START.md
+/whisper_colab.py
+/whisper_one_cell.py
+/src/store

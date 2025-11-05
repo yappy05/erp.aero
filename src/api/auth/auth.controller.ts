@@ -9,36 +9,33 @@ import { Protected } from '../../common/decorators';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Protected()
-  @Get()
-  public findAll() {
-    return this.authService.getAll();
-  }
-
   @Post('signup')
   public async create(
-    @Res({ passthrough: true }) res: Response,
     @Body() dto: RegisterDto,
+    @Res({ passthrough: true }) res: Response,
+    @Req() req: Request,
   ) {
-    return await this.authService.register(res, dto);
+    return await this.authService.register(res, dto, req);
   }
 
   @Post('signin')
   public async login(
-    @Res({ passthrough: true }) res: Response,
     @Body() dto: LoginDto,
+    @Res({ passthrough: true }) res: Response,
+    @Req() req: Request,
   ) {
-    return await this.authService.login(res, dto);
+    return await this.authService.login(res, dto, req);
   }
 
   @Post('logout')
-  public logout(
-    @Res({ passthrough: true }) res: Response
+  public async logout(
+    @Res({ passthrough: true }) res: Response,
+    @Req() req: Request,
   ) {
-    return this.authService.logout(res);
+    return await this.authService.logout(res, req);
   }
 
-  @Post('signin/refresh')
+  @Post('signin/new_token')
   public async refresh(
     @Req() req: Request,
     @Res({ passthrough: true }) res: Response,

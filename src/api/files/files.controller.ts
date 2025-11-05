@@ -24,7 +24,7 @@ import { FilesInterceptor, FileInterceptor } from '@nestjs/platform-express';
 export class FilesController {
   constructor(private readonly filesService: FilesService) {}
 
-  @Post()
+  @Post('upload')
   @UseInterceptors(FilesInterceptor('file', 21))
   public async upload(
     @UploadedFiles() files: Express.Multer.File[],
@@ -33,7 +33,7 @@ export class FilesController {
     return await this.filesService.upload(files, req);
   }
 
-  @Get()
+  @Get('list')
   public async getFiles(
     @Req() req: Request,
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
@@ -43,7 +43,7 @@ export class FilesController {
     return await this.filesService.getFiles(req, page, listSize);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   public async deleteFile(@Param('id') fileId: string, @Req() req: Request) {
     return await this.filesService.deleteFile(fileId, req);
   }
@@ -53,7 +53,7 @@ export class FilesController {
     return await this.filesService.getFile(fileId, req);
   }
 
-  @Get(':id/download')
+  @Get('download/:id')
   public async downloadFile(
     @Param('id') fileId: string,
     @Req() req: Request,

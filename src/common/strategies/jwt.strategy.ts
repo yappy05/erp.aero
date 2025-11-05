@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { ConfigService } from '@nestjs/config';
@@ -24,6 +28,17 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       where: { id: payload.id },
     });
     if (!user) throw new NotFoundException('Пользователь не найден');
+
+    // Проверяем сессию, если sessionId есть в токене (для access токена)
+    if (payload.sessionId) {
+      const session = await this.prismaService.session.findUnique({
+        where: { id: payload.sessionId },
+      });
+
+      if (!session || session.expiresAt < new Date()) {
+        throw new UnauthorizedException('Сессия не найдена или истекла');
+      }
+    }
 
     return user;
   }
